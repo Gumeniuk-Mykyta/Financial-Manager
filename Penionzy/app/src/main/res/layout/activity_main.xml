@@ -4,66 +4,72 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.vymirs.penionzy.penionzy.View.MainActivity"
-    tools:background="#fff">
+    android:background="#fff"
+    tools:context="com.vymirs.penionzy.penionzy.View.MainActivity">
 
-    <LinearLayout android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/ActionBar"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
-        tools:background="#272A31"
-        android:id="@+id/ActionBar">
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:background="#272A31">
 
 
         <Button
-            android:text="M"
-            android:layout_height="match_parent"
             android:id="@+id/burger"
-            android:layout_weight="0.30"
-            tools:background="#272A31"
-            tools:textColor="#fff"
-            android:layout_width="20%" />
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_weight="30"
+            android:background="#272A31"
+            android:text="M"
+            android:textColor="#fff" />
 
         <Button
-            android:text="PENIONZY"
-            android:layout_width="40%"
-            android:layout_height="match_parent"
             android:id="@+id/Logo"
-            android:layout_weight="0.40"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_weight="50"
             android:allowUndo="true"
-            tools:background="#497FDC"
-            tools:textColor="#fff" />
+            android:background="#497FDC"
+            android:text="PENIONZY"
+            android:textColor="#fff" />
 
         <Button
-            android:text="H"
-            android:layout_height="match_parent"
             android:id="@+id/History"
-            android:layout_weight="0.15"
-            tools:background="#497FDC"
-            android:layout_width="10%"
-            tools:textColor="#fff" />
+            android:layout_width="40dp"
+
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:background="#497FDC"
+            android:text="H"
+            android:textColor="#fff" />
 
         <Button
-            android:text="S"
-            android:layout_height="match_parent"
             android:id="@+id/Stats"
-            android:layout_weight="0.15"
-            tools:background="#497FDC"
-            android:layout_width="10%"
-            tools:textColor="#fff" />
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:background="#497FDC"
+            android:text="S"
+            android:textColor="#fff" />
     </LinearLayout>
 
-    <LinearLayout android:layout_width="match_parent"
-        tools:background="#272A31"
+    <LinearLayout
         android:id="@+id/FrontGraph"
-        android:layout_below="@+id/ActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:layout_alignParentLeft="true"
-        android:layout_height="200dp">
+        android:layout_below="@+id/ActionBar"
+        android:background="#272A31"
+        android:orientation="vertical">
 
-        </LinearLayout>
+    </LinearLayout>
 
     <ListView
+        android:id="@+id/listExpenses"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
-        android:id="@+id/listExpenses"
         android:layout_below="@+id/FrontGraph" />
 </RelativeLayout>
