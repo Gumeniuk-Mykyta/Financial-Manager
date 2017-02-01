@@ -18,7 +18,6 @@ import java.util.ArrayList;
 public class SpendingsListAdapter extends BaseAdapter {
     private ArrayList<Spending> spendingsList;
     private Context context;
-    boolean isNoDate = false;
 
     public SpendingsListAdapter(ArrayList<Spending> spendingsList, Context context) {
         this.spendingsList = spendingsList;
@@ -48,7 +47,7 @@ public class SpendingsListAdapter extends BaseAdapter {
         }
 //        TextView textView = (TextView) taskView.findViewById(R.id.itemText);
 //        textView.setText();
-//     
+//
         return taskView;
     }
 }
