@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -10,49 +11,61 @@
     <LinearLayout
         android:id="@+id/ActionBar"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:orientation="horizontal"
         android:weightSum="100"
-        android:background="#272A31">
+        android:background="@drawable/customborder">
 
 
         <Button
             android:id="@+id/burger"
-            android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_weight="30"
+            android:layout_weight="15"
             android:background="#272A31"
-            android:text="M"
-            android:textColor="#fff" />
+            android:text="≡"
+            android:textColor="#fff"
+            android:textSize="30sp"
+            android:layout_width="15dp" />
+
+        <Button
+            android:id="@+id/burger"
+            android:layout_height="match_parent"
+            android:layout_weight="15"
+            android:background="#272A31"
+            android:text="+"
+            android:textColor="#fff"
+            android:textSize="30sp"
+            android:layout_width="15dp" />
 
         <Button
             android:id="@+id/Logo"
-            android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:layout_weight="50"
+            android:layout_weight="40"
             android:allowUndo="true"
             android:background="#497FDC"
             android:text="PENIONZY"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            android:layout_width="40dp" />
 
         <Button
             android:id="@+id/History"
-            android:layout_width="40dp"
 
             android:layout_height="match_parent"
-            android:layout_weight="10"
-            android:background="#497FDC"
+            android:layout_weight="15"
+            android:background="#272A31"
             android:text="H"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            android:layout_width="15dp" />
 
         <Button
             android:id="@+id/Stats"
-            android:layout_width="40dp"
             android:layout_height="match_parent"
-            android:layout_weight="10"
-            android:background="#497FDC"
+            android:layout_weight="15"
+            android:background="#272A31"
             android:text="S"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            android:onClick="initial_setup.xml"
+            android:layout_width="15dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -64,6 +77,13 @@
         android:background="#272A31"
         android:orientation="vertical">
 
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/chart"
+            android:id="@+id/imageView"
+            android:scrollbars="vertical" />
     </LinearLayout>
 
     <ListView
@@ -72,4 +92,5 @@
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/FrontGraph" />
+
 </RelativeLayout>
