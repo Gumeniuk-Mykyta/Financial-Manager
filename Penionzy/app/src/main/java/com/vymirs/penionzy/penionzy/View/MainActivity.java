@@ -17,17 +17,8 @@ public class MainActivity extends AppCompatActivity {
     static public SpendingsListAdapter spendingsListAdapter;
     static public ListView spendingsListView;
     static public ArrayList<Spending> spendingsList = new ArrayList();
-
-    //GRAPH SETUP
-    GraphView graph = (GraphView) findViewById(R.id.graph);
-    LineGraphSeries<DataPoint> series = new LineGraphSeries<>(new DataPoint[] {
-            new DataPoint(0, 1),
-            new DataPoint(1, 5),
-            new DataPoint(2, 3),
-            new DataPoint(3, 2),
-            new DataPoint(4, 6)
-    });
-
+    GraphView graph;
+    LineGraphSeries<DataPoint> series;
 
 
     @Override
@@ -37,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setListAdapter(spendingsList);
         fillList();
         fillSpendingListWithRandomSpendings();
+        graphInit();
 
         //GRAPH CALL
         graph.addSeries(series);
@@ -52,6 +44,18 @@ public class MainActivity extends AppCompatActivity {
     public void setListAdapter(ArrayList<Spending> tasksList) {
         spendingsListView = (ListView) findViewById(R.id.listExpenses);
         spendingsListAdapter = new SpendingsListAdapter(spendingsList, this);
+    }
+
+    //GRAPH SETUP
+    private void graphInit() {
+        graph = (GraphView) findViewById(R.id.graph);
+        series = new LineGraphSeries<>(new DataPoint[]{
+                new DataPoint(0, 1),
+                new DataPoint(1, 5),
+                new DataPoint(2, 3),
+                new DataPoint(3, 2),
+                new DataPoint(4, 6)
+        });
     }
 
     public static void fillList() {
