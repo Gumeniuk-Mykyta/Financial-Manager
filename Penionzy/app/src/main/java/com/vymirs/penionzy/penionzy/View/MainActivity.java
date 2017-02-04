@@ -4,6 +4,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
+
 import com.vymirs.penionzy.penionzy.Model.Spending;
 import com.vymirs.penionzy.penionzy.R;
 
@@ -14,6 +18,17 @@ public class MainActivity extends AppCompatActivity {
     static public ListView spendingsListView;
     static public ArrayList<Spending> spendingsList = new ArrayList();
 
+    //GRAPH SETUP
+    GraphView graph = (GraphView) findViewById(R.id.graph);
+    LineGraphSeries<DataPoint> series = new LineGraphSeries<>(new DataPoint[] {
+            new DataPoint(0, 1),
+            new DataPoint(1, 5),
+            new DataPoint(2, 3),
+            new DataPoint(3, 2),
+            new DataPoint(4, 6)
+    });
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
         setListAdapter(spendingsList);
         fillList();
         fillSpendingListWithRandomSpendings();
+
+        //GRAPH CALL
+        graph.addSeries(series);
     }
 
     private void fillSpendingListWithRandomSpendings() {
