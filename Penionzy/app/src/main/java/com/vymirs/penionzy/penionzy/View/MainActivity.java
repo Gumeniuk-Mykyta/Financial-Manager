@@ -1,7 +1,11 @@
 package com.vymirs.penionzy.penionzy.View;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuInflater;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.jjoe64.graphview.GraphView;
@@ -32,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
         //GRAPH CALL
         graph.addSeries(series);
+
+
     }
 
     private void fillSpendingListWithRandomSpendings() {
@@ -58,7 +64,30 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
+
+
     public static void fillList() {
         spendingsListView.setAdapter(spendingsListAdapter);
+    }
+
+    public void onClick(View view) {
+
+        switch (view.getId()) {
+            case R.id.burger:
+                //show menu
+                break;
+            case R.id.Logo:
+                //show company info
+                break;
+            case R.id.minusFunds:
+                //show modal expense form
+                break;
+            case R.id.plusFunds:
+                Intent intent = new Intent(this, AddFunds.class);
+                this.startActivity(intent);
+                break;
+        }
+
     }
 }
