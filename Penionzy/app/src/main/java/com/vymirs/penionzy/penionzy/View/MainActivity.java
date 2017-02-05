@@ -7,6 +7,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
@@ -76,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.burger:
                 //show menu
+                Toast.makeText(this, "Женя пидораз", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.Logo:
                 //show company info
