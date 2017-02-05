@@ -77,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.burger:
                 //show menu
-                Toast.makeText(this, "Женя пидораз", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.Logo:
                 //show company info
