@@ -11,79 +11,158 @@
     <LinearLayout
         android:id="@+id/ActionBar"
         android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="vertical"
+        android:weightSum="100"
+        android:background="@drawable/customborder">
+
+    <LinearLayout
+        android:id="@+id/ActionBarTop"
+        android:layout_width="match_parent"
         android:layout_height="40dp"
         android:orientation="horizontal"
         android:weightSum="100"
         android:background="@drawable/customborder">
 
-
-        <Button
-            android:id="@+id/burger"
-            android:layout_height="match_parent"
-            android:layout_weight="30"
-            android:background="#272A31"
-            android:text="≡"
-            android:textColor="#fff"
-            android:textSize="30sp"
-            android:layout_width="15dp"
-            android:onClick="onClick"/>
-
-        <Button
-            android:id="@+id/Logo"
-            android:layout_height="match_parent"
-            android:layout_weight="40"
-            android:allowUndo="true"
-            android:background="#497FDC"
-            android:text="PENIONZY"
-            android:textColor="#fff"
-            android:layout_width="40dp" />
-
-        <Button
-            android:id="@+id/minusFunds"
-            android:layout_height="match_parent"
-            android:layout_weight="15"
-            android:background="#272A31"
-            android:text="-"
-            android:textColor="#fff"
-            android:textSize="30sp"
-            android:layout_width="15dp" />
-
         <Button
             android:id="@+id/plusFunds"
             android:layout_height="match_parent"
-            android:layout_weight="15"
-            android:background="#272A31"
+            android:layout_weight="30"
+            android:background="#1f252d"
             android:text="+"
-            android:textColor="#fff"
+            android:textColor="#a8ffb0"
             android:textSize="30sp"
             android:layout_width="15dp"
             android:onClick="onClick" />
 
+        <Button
+            android:id="@+id/Balance"
+            android:layout_height="match_parent"
+            android:layout_weight="40"
+            android:background="#1e5cb2"
+            android:text="$ 500"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:layout_width="15dp"
+            android:onClick="onClick"
+            android:elevation="0dp"
+            android:textStyle="normal|bold"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/minusFunds"
+            android:layout_height="match_parent"
+            android:layout_weight="30"
+            android:background="#1f252d"
+            android:text="-"
+            android:textColor="#ffa8a8"
+            android:textSize="30sp"
+            android:layout_width="15dp"
+            android:onClick="onClick"/>
+
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/FrontGraph"
+        android:id="@+id/ActionBarBot"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/ActionBar"
-        android:background="#272A31"
-        android:orientation="vertical">
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <Button
+            android:id="@+id/buttonHistory"
+            android:layout_height="match_parent"
+            android:layout_weight="33"
+            android:background="#263344"
+            android:text="History"
+            android:textColor="#fff"
+            android:textSize="15sp"
+            android:layout_width="15dp"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/buttonStats"
+            android:layout_height="match_parent"
+            android:layout_weight="34"
+            android:background="#1e5cb2"
+            android:text="Penionzy"
+            android:textColor="#fff"
+            android:textSize="15sp"
+            android:layout_width="15dp"
+            android:onClick="onClick"
+            android:elevation="0dp" />
+
+        <Button
+            android:id="@+id/buttonf"
+            android:layout_height="match_parent"
+            android:layout_weight="33"
+            android:background="#263344"
+            android:text="Statistics"
+            android:textColor="#fff"
+            android:textSize="15sp"
+            android:layout_width="15dp"
+            android:onClick="onClick"/>
 
 
-        <com.jjoe64.graphview.GraphView
-            android:layout_width="match_parent"
-            android:layout_height="200dip"
-            android:id="@+id/graph" />
     </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Footer"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:id="@+id/buttonSettings"
+            android:layout_height="match_parent"
+            android:layout_weight="33"
+            android:background="#10101c"
+            android:text="Settings"
+            android:textColor="#fff"
+            android:textSize="15sp"
+            android:layout_width="15dp"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/buttonProfile"
+            android:layout_height="match_parent"
+            android:layout_weight="34"
+            android:background="#10101c"
+            android:text="Profile"
+            android:textColor="#fff"
+            android:textSize="15sp"
+            android:layout_width="15dp"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/buttonAbout"
+            android:layout_height="match_parent"
+            android:layout_weight="33"
+            android:background="#10101c"
+            android:text="About"
+            android:textColor="#fff"
+            android:textSize="15sp"
+            android:layout_width="15dp"
+            android:onClick="onClick"/>
+
+     </LinearLayout>
 
     <ListView
         android:id="@+id/listExpenses"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/FrontGraph"
-        android:divider="@null"
-        android:dividerHeight="0dp" />
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/Footer"
+        android:layout_below="@+id/ActionBar"
+        android:background="@drawable/listborder"/>
 
 </RelativeLayout>

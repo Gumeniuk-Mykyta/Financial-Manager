@@ -33,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
         setListAdapter(spendingsList);
         fillList();
         fillSpendingListWithRandomSpendings();
-        graphInit();
+        //graphInit();
 
         //GRAPH CALL
-        graph.addSeries(series);
+       // graph.addSeries(series);
 
 
     }
@@ -54,16 +54,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //GRAPH SETUP
-    private void graphInit() {
-        graph = (GraphView) findViewById(R.id.graph);
-        series = new LineGraphSeries<>(new DataPoint[]{
-                new DataPoint(0, 1),
-                new DataPoint(1, 5),
-                new DataPoint(2, 3),
-                new DataPoint(3, 2),
-                new DataPoint(4, 6)
-        });
-    }
+//    private void graphInit() {
+//        graph = (GraphView) findViewById(R.id.graph);
+//        series = new LineGraphSeries<>(new DataPoint[]{
+//                new DataPoint(0, 1),
+//                new DataPoint(1, 5),
+//                new DataPoint(2, 3),
+//                new DataPoint(3, 2),
+//                new DataPoint(4, 6)
+//        });
+//    }
 
 
 
