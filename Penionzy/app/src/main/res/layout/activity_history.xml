@@ -2,11 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
+    android:id="@+id/activity_history"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
-    tools:context="com.vymirs.penionzy.penionzy.View.MainActivity">
+    tools:context="com.vymirs.penionzy.penionzy.View.HistoryActivity">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -65,6 +65,7 @@
             android:layout_weight="5"
             android:background="#263344"
             android:clickable="true"
+            android:onClick="onClick"
             android:orientation="horizontal">
 
             <ImageView
@@ -75,6 +76,7 @@
                 android:src="@drawable/settings"
                 android:layout_margin="5dp" />
         </LinearLayout>
+
 
     </LinearLayout>
 
@@ -101,7 +103,7 @@
         android:layout_height="50dp">
 
         <Button
-            android:id="@+id/buttonBalancePlus"
+            android:id="@+id/plusFunds"
             android:layout_height="match_parent"
             android:layout_weight="30"
             android:background="#1f252d"
@@ -112,7 +114,7 @@
             android:onClick="onClick" />
 
         <Button
-            android:id="@+id/buttonBalance"
+            android:id="@+id/Balance"
             android:layout_height="match_parent"
             android:layout_weight="40"
             android:background="#1e5cb2"
@@ -126,7 +128,7 @@
             android:textAlignment="center" />
 
         <Button
-            android:id="@+id/buttonBalanceMinus"
+            android:id="@+id/minusFunds"
             android:layout_height="match_parent"
             android:layout_weight="30"
             android:background="#1f252d"
@@ -150,22 +152,37 @@
         android:layout_alignParentStart="true"
         android:layout_height="100dp">
 
-        <TextView
-            android:text="Your daily balance is positive!"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/textView"
-            android:layout_weight="29.66"
-            android:textColor="#a8ffb0"
-            android:gravity="center_vertical|center_horizontal|center"
-            android:padding="10dp" />
 
-        <ProgressBar
-            style="?android:attr/progressBarStyleLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/progressBar"
-            android:layout_weight="70" />
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerDate"
+            android:layout_weight="33" >
+            <resources>
+                <string-array name="planets_array">
+                    <item>Mercury</item>
+                    <item>Venus</item>
+                    <item>Earth</item>
+                    <item>Mars</item>
+                    <item>Jupiter</item>
+                    <item>Saturn</item>
+                    <item>Uranus</item>
+                    <item>Neptune</item>
+                </string-array>
+            </resources>
+        </Spinner>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerBalance"
+            android:layout_weight="34" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerDaily"
+            android:layout_weight="33" />
 
     </LinearLayout>
 

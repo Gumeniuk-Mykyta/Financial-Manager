@@ -75,17 +75,33 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View view) {
 
         switch (view.getId()) {
-            case R.id.burger:
-                //show menu
+
+            case R.id.buttonLogo:
+                Intent intent = new Intent(this, HistoryActivity.class);
+                this.startActivity(intent);
                 break;
-            case R.id.Logo:
-                //show company info
+            case R.id.buttonHistory:
+                intent = new Intent(this, HistoryActivity.class);
+                this.startActivity(intent);
                 break;
-            case R.id.minusFunds:
-                //show modal expense form
+            case R.id.buttonStats:
+                intent = new Intent(this, HistoryActivity.class);
+                this.startActivity(intent);
                 break;
-            case R.id.plusFunds:
-                Intent intent = new Intent(this, AddFunds.class);
+            case R.id.buttonSettings:
+                intent = new Intent(this, HistoryActivity.class);
+                this.startActivity(intent);
+                break;
+            case R.id.buttonBalanceMinus:
+                intent = new Intent(this, HistoryActivity.class);
+                this.startActivity(intent);
+                break;
+            case R.id.buttonBalance:
+                intent = new Intent(this, HistoryActivity.class);
+                this.startActivity(intent);
+                break;
+            case R.id.buttonBalancePlus:
+                intent = new Intent(this, HistoryActivity.class);
                 this.startActivity(intent);
                 break;
         }
