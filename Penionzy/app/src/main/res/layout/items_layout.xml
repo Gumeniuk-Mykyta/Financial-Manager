@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fcfcfc"
+    android:background="#10101c"
     android:weightSum="1">
 
     <LinearLayout
@@ -10,7 +10,8 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="100">
+        android:weightSum="100"
+        android:alpha="0.95">
 
         <TextView
             android:text="15:30"
@@ -18,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:textSize="14sp"
-            android:textColor="#1e1e1e"
+            android:textColor="#fcfcfc"
             android:id="@+id/itemTimestamp"
             android:layout_weight="10" />
 
@@ -29,7 +30,7 @@
             android:layout_margin="10dp"
             android:textSize="14sp"
             android:id="@+id/itemName"
-            android:textColor="#1e1e1e"
+            android:textColor="#fcfcfc"
             android:layout_weight="80" />
 
         <TextView
@@ -38,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:textSize="14sp"
-            android:textColor="#3d0000"
+            android:textColor="#ffaaaa"
             android:id="@+id/itemSum"
             android:layout_weight="10" />
 
