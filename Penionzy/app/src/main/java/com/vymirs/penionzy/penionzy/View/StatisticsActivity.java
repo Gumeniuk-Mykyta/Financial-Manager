@@ -1,75 +1,44 @@
 package com.vymirs.penionzy.penionzy.View;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ListView;
-import android.widget.Toast;
 
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
-
-import com.vymirs.penionzy.penionzy.Model.Spending;
 import com.vymirs.penionzy.penionzy.R;
 
-import java.util.ArrayList;
+/**
+ * Created by lyakhov on 2/7/2017.
+ */
 
-public class MainActivity extends AppCompatActivity {
-    static public SpendingsListAdapter spendingsListAdapter;
-    static public ListView spendingsListView;
-    static public ArrayList<Spending> spendingsList = new ArrayList();
+public class StatisticsActivity extends Activity {
+
     GraphView graph;
     LineGraphSeries<DataPoint> series;
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        setListAdapter(spendingsList);
-        fillList();
-        fillSpendingListWithRandomSpendings();
-        //graphInit();
+        setContentView(R.layout.activity_statistics);
 
         //GRAPH CALL
-       // graph.addSeries(series);
-
-
+        graphInit();
+        graph.addSeries(series);
     }
 
-    private void fillSpendingListWithRandomSpendings() {
-        for (int i = 0; i < 10; i++) {
-            spendingsList.add(new Spending());
-        }
-    }
-
-
-    public void setListAdapter(ArrayList<Spending> tasksList) {
-        spendingsListView = (ListView) findViewById(R.id.listExpenses);
-        spendingsListAdapter = new SpendingsListAdapter(spendingsList, this);
-    }
-
-    //GRAPH SETUP
-//    private void graphInit() {
-//        graph = (GraphView) findViewById(R.id.graph);
-//        series = new LineGraphSeries<>(new DataPoint[]{
-//                new DataPoint(0, 1),
-//                new DataPoint(1, 5),
-//                new DataPoint(2, 3),
-//                new DataPoint(3, 2),
-//                new DataPoint(4, 6)
-//        });
-//    }
-
-
-
-
-    public static void fillList() {
-        spendingsListView.setAdapter(spendingsListAdapter);
+    private void graphInit() {
+        graph = (GraphView) findViewById(R.id.graphHistory);
+        series = new LineGraphSeries<>(new DataPoint[]{
+                new DataPoint(0, 1),
+                new DataPoint(1, 5),
+                new DataPoint(2, 3),
+                new DataPoint(3, 2),
+                new DataPoint(4, 6)
+        });
     }
 
     public void onClick(View view) {
@@ -85,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 this.startActivity(intent);
                 break;
             case R.id.buttonStats:
-                intent = new Intent(this, StatisticsActivity.class);
+                intent = new Intent(this, HistoryActivity.class);
                 this.startActivity(intent);
                 break;
             case R.id.buttonSettings:

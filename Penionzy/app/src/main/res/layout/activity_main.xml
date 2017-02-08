@@ -65,7 +65,8 @@
             android:layout_weight="5"
             android:background="#263344"
             android:clickable="true"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:onClick="onClick">
 
             <ImageView
                 android:id="@+id/iconSettings"

@@ -12,7 +12,7 @@ import com.vymirs.penionzy.penionzy.R;
  * Created by lyakhov on 2/7/2017.
  */
 
-public class HistoryActivity extends Activity{
+public class HistoryActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
