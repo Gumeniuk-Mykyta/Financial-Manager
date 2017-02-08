@@ -14,6 +14,7 @@ import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
 import com.vymirs.penionzy.penionzy.Model.Spending;
+import com.vymirs.penionzy.penionzy.Model.Test;
 import com.vymirs.penionzy.penionzy.R;
 
 import java.util.ArrayList;
@@ -74,37 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick(View view) {
 
-        switch (view.getId()) {
-
-            case R.id.buttonLogo:
-                Intent intent = new Intent(this, HistoryActivity.class);
-                this.startActivity(intent);
-                break;
-            case R.id.buttonHistory:
-                intent = new Intent(this, HistoryActivity.class);
-                this.startActivity(intent);
-                break;
-            case R.id.buttonStats:
-                intent = new Intent(this, StatisticsActivity.class);
-                this.startActivity(intent);
-                break;
-            case R.id.buttonSettings:
-                intent = new Intent(this, HistoryActivity.class);
-                this.startActivity(intent);
-                break;
-            case R.id.buttonBalanceMinus:
-                intent = new Intent(this, HistoryActivity.class);
-                this.startActivity(intent);
-                break;
-            case R.id.buttonBalance:
-                intent = new Intent(this, HistoryActivity.class);
-                this.startActivity(intent);
-                break;
-            case R.id.buttonBalancePlus:
-                intent = new Intent(this, HistoryActivity.class);
-                this.startActivity(intent);
-                break;
-        }
+        Test.test(view,this);
 
     }
 }
